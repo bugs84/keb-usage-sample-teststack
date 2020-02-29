@@ -3,12 +3,16 @@
  */
 package org.keb.samples
 
-import kotlin.test.Test
-import kotlin.test.assertTrue
+import org.assertj.core.api.Assertions.*
+import org.junit.jupiter.api.Test
 
 class LibraryTest {
-    @Test fun testSomeLibraryMethod() {
-        val classUnderTest = Library()
-        assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'")
+    @Test
+    fun testSomeLibraryMethod() {
+        //when
+        val result = Library().someLibraryMethod()
+
+        //then
+        assertThat(result).isTrue()
     }
 }
